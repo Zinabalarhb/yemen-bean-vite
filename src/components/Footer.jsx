@@ -3,6 +3,7 @@ import "../styles/Footer.css";
 
 export default function Footer() {
   return (
+    
     <footer className="site-footer">
       <Container>
         <p className="footer-main">يمن بن — قهوة تُقدّم بفخر ☕</p>

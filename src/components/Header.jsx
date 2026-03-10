@@ -48,10 +48,12 @@ export default function Header({ searchTerm, setSearchTerm }) {
         <Navbar.Collapse>
           <Nav className="mx-auto text-center">
             <Nav.Link as={Link} to="/">الرئيسية</Nav.Link>
-            <Nav.Link href="#bestsellers">الأكثر مبيعًا</Nav.Link>
-            <Nav.Link href="#brew">طرق التحضير</Nav.Link>
-            <Nav.Link href="#testimonials">آراء العملاء</Nav.Link>
+            <Nav.Link as={Link} to="/#bestsellers">الأكثر مبيعًا</Nav.Link>
+             <Nav.Link as={Link} to="/categories">الأقسام</Nav.Link>
+            <Nav.Link as={Link} to="/#brew">طرق التحضير</Nav.Link>
+            <Nav.Link as={Link} to="/#testimonials">آراء العملاء</Nav.Link>
             <Nav.Link as={Link} to="/products">منتجاتنا</Nav.Link>
+            
           </Nav>
 
           <div className="desktop-icons d-none d-lg-flex">

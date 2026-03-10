@@ -1,67 +1,154 @@
-.testimonials-section {
-  padding: 60px 0;
-  background-color: #fff8f0;
-}
+/* Testimonials.css */
 
-.testimonials-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.testimonials-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.testimonials-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.testimonial-card {
-  flex: 0 0 auto;
-  width: 220px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1rem;
+/* القسم بالكامل */
+.chat-section {
+  padding: 50px 20px;
+  background-color: #f9f5f0; /* خلفية دافئة */
   text-align: center;
 }
 
-.testimonial-avatar {
-  width: 60px;
-  height: 60px;
+/* عنوان القسم */
+.chat-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #5a381e; /* لون بني دافئ */
+  font-weight: bold;
+}
+
+/* حاوية الفقاعات */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* صف الفقاعة: متناوب بين اليسار واليمين */
+.chat-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.chat-row.left {
+  flex-direction: row;
+}
+
+.chat-row.right {
+  flex-direction: row-reverse;
+}
+
+/* صورة العميل */
+.chat-avatar {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
+  object-fit: cover;
+  margin: 0 10px;
 }
 
-.testimonial-feedback {
-  font-size: 0.9rem;
-  font-style: italic;
-  color: #7B2D2B;
-  margin-bottom: 0.5rem;
+/* الفقاعة الفردية */
+.chat-bubble {
+  max-width: 65%;
+  background: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-.testimonial-name {
-  font-weight: 600;
-  color: #3E2723;
-}
-
-.nav {
-  background: rgba(255,255,255,0.8);
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-size: 1.2rem;
-  cursor: pointer;
+/* ذيل الفقاعة */
+.chat-row.left .chat-bubble::after {
+  content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  left: -8px;
+  bottom: 15px;
+  border-width: 8px 8px 8px 0;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
 }
 
-.nav.left { left: -10px; }
-.nav.right { right: -10px; }
+.chat-row.right .chat-bubble::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  bottom: 15px;
+  border-width: 8px 0 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+/* نص الفقاعة */
+.chat-text {
+  margin: 0;
+}
+
+/* اسم العميل */
+.chat-name {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #8b5e3c;
+}
+
+/* زر المزيد */
+.load-more-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #8b5e3c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: #a26b45;
+}
+
+/* زر التبديل بين العرض الكامل والجزئي */
+.toggle-btn {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #5a381e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #8b5e3c;
+}
+/* النص التفاعلي للتبديل */
+.toggle-text {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #8b5e3c;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.toggle-text:hover {
+  color: #5a381e;
+}
+
+/* Responsive للأجهزة الصغيرة */
+@media (max-width: 600px) {
+  .chat-bubble {
+    max-width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+
+  .chat-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}

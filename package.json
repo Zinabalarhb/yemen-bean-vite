@@ -2,6 +2,7 @@
   "name": "yemen-bean-vite",
   "private": true,
   "version": "0.0.0",
+    "homepage": "https://zinabalarhb.github.io/Yemen-Bean-React",
   "type": "module",
   "scripts": {
     "dev": "vite",

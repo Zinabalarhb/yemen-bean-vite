@@ -9,6 +9,8 @@ import SearchPage from "./Pages/SearchPage";
 import CartPage from "./Pages/CartPage";
 import AccountPage from "./Pages/AccountPage";
 import CheckoutPage from "./Pages/CheckoutPage";
+import Categories from "./Pages/Categories";
+
 
 /* ========= Admin Pages ========= */
 import AdminLayout from "./Pages/Admin/AdminLayout";
@@ -29,6 +31,8 @@ function App() {
   return (
     <Router>
       <Routes>
+
+
         {/* ================= Public Routes ================= */}
         <Route
           path="/"
@@ -43,14 +47,19 @@ function App() {
           <Route path="search" element={<SearchPage searchTerm={searchTerm} />} />
           <Route path="products" element={<ProductPage searchTerm={searchTerm} />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="account" element={<AccountPage />} />
-          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="account" element={<AccountPage/>} />
+          <Route path="checkout" element={<CheckoutPage/>} />
+          <Route path="Categories" element={<Categories/>} />
+
+          
+          
         </Route>
 
-        {/* ================= Admin Login ================= */}
+
+        {/* ================= Admin Login Route ================= */}
         <Route path="/admin/login" element={<AdminLogin />} />
 
-        {/* ================= Admin Protected ================= */}
+        {/* ================= Admin Protected Routes ================= */}
         <Route
           path="/admin"
           element={
@@ -59,7 +68,7 @@ function App() {
             </AdminRoute>
           }
         >
-          {/* 👇 مهم: دخول /admin يودّي للداشبورد */}
+          {/*   مهم: دخول /admin يودّي للداشبورد */}
           <Route index element={<Navigate to="dashboard" replace />} />
 
           <Route path="dashboard" element={<AdminDashboard />} />
@@ -69,8 +78,10 @@ function App() {
           <Route path="users" element={<AdminUsersPage />} />
         </Route>
 
-        {/* ================= 404 ================= */}
+
+        {/* ================= 404 Route================= */}
         <Route path="*" element={<Navigate to="/" />} />
+
       </Routes>
     </Router>
   );

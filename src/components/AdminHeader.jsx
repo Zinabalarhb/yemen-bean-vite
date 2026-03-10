@@ -6,6 +6,7 @@ import { Home } from "lucide-react";
 import "../styles/AdminHeader.css";
 
 const AdminHeader = ({ toggleSidebar }) => {
+  
   const navigate = useNavigate();
 
   const handleLogout = () => {
