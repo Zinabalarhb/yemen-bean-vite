@@ -2,7 +2,8 @@
   "name": "yemen-bean-vite",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://zinabalarhb.github.io/yemen-bean-vite",
+  "homepage": "https://zinabalarhb.github.io/yemen-bean-vite/",
+  
   "type": "module",
   "scripts": {
     "dev": "vite",
